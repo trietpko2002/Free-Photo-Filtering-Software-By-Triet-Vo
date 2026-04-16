@@ -56,4 +56,4 @@
 ## ☕ ỦNG HỘ TÁC GIẢ (DONATE)
 Phần mềm này hoàn toàn miễn phí và không chứa quảng cáo. Nếu nó giúp tiết kiệm hàng giờ đồng hồ ngồi lọc ảnh của bạn, hãy mời dev một ly cà phê qua mã **VietQR** được tích hợp ngay trong trang chủ phần mềm nhé!
 
-**Tác giả:** Phan Rang Developer | Khánh Hòa, Việt Nam
+**Tác giả:** Triet Vo | Email:phanranggaming@gmail.com | Github: @trietpko2002
