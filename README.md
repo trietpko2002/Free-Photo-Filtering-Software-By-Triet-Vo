@@ -41,7 +41,7 @@
 * **Safe Eject:** Safely disconnect SD Cards/USB drives directly from the app to prevent data corruption.
 
 ### 📥 How to Use (Portable Version)
-1. Navigate to the **[Releases](LINK_RELEASES_CUA_BAN)** page.
+1. Navigate to the **[Releases](https://github.com/trietpko2002/web_gioi_thieu_phan_mem_loc_anh_v8/releases/tag/stable)** page.
 2. Download the latest `PhotoFilterFree.exe` file.
 3. Plug in your SD card, double-click the `.exe`, and start sorting!
 
