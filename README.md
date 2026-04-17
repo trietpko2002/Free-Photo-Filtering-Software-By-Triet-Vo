@@ -14,7 +14,7 @@
 ## 🛡️ Xác thực & Bảo mật (Security Check)
 Để đảm bảo an toàn tuyệt đối, vui lòng kiểm tra mã MD5 của tệp `.exe` bạn tải về để khớp với mã gốc từ tác giả.
 * **Tệp tin:** `PhotoFilterFree.exe`
-* **MD5 Checksum:** `[CHÈN_MÃ_MD5_CỦA_BẠN_VÀO_ĐÂY]`
+* **MD5 Checksum:** `05a45b1fdb0a252bfb25f87c89b641dc`
 * **Quét VirusTotal (0/70):** [Click để xem kết quả quét file sạch 100%](LINK_VIRUSTOTAL_CUA_BAN)
 
 ---
