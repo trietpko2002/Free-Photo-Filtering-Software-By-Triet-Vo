@@ -15,7 +15,7 @@
 Để đảm bảo an toàn tuyệt đối, vui lòng kiểm tra mã MD5 của tệp `.exe` bạn tải về để khớp với mã gốc từ tác giả.
 * **Tệp tin:** `PhotoFilterFree.exe`
 * **MD5 Checksum:** `05a45b1fdb0a252bfb25f87c89b641dc`
-* **Quét VirusTotal (0/70):** [Click để xem kết quả quét file sạch 100%](LINK_VIRUSTOTAL_CUA_BAN)
+* **Quét VirusTotal (2/70):** [Click để xem kết quả quét file sạch 100%](https://www.virustotal.com/gui/file/d2e75dfcfb6d005c24c51611617eff742d701abe331917231ac706c0c058bbcc?nocache=1)
 
 ---
 
