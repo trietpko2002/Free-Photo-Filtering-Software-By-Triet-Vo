@@ -72,7 +72,7 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/10 blur-[120px] -z-10 rounded-full"></div>
         <div class="relative rounded-xl overflow-hidden border border-slate-700/50 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-[#0f0f13] group">
             
-            <img id="mainSlider" src="screenshot_welcome.png" alt="App Screenshot" class="w-full h-auto slider-img opacity-100 object-contain">
+            <img id="mainSlider" src="1.png" alt="App Screenshot" class="w-full h-auto slider-img opacity-100 object-contain">
             
             <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-blue-600 text-white w-12 h-12 rounded-full backdrop-blur transition opacity-0 group-hover:opacity-100">
                 <i class="fas fa-chevron-left text-xl"></i>
@@ -200,6 +200,8 @@
         <div class="container mx-auto px-6 text-center">
             <div class="text-slate-500 text-sm">
                 <p>Designed & Coded by <i class="fas fa-heart text-red-500 mx-1"></i> by <strong class="text-slate-300">Triet Vo</strong> &copy; 2026</p>
+                <p class="mt-1 vi">Phường Phan Rang, Khánh Hòa</p>
+                <p class="mt-1 en">Phan Rang Ward, Khanh Hoa Province</p>
             </div>
         </div>
     </footer>
@@ -211,8 +213,8 @@
             htmlTag.classList.toggle('lang-en');
         }
 
-        // Tên 2 file ảnh bạn vừa cung cấp
-        const images = ["screenshot_welcome.png", "screenshot_workspace.png"];
+        // ĐÃ SỬA: Khai báo mảng 3 ảnh 1.png, 2.png, 3.png
+        const images = ["1.png", "2.png", "3.png"];
         let currentIndex = 0;
         const imgElement = document.getElementById("mainSlider");
         const dotsContainer = document.getElementById("sliderDots");
