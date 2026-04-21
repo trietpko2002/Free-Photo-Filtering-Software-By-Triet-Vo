@@ -1,6 +1,6 @@
 # 📸 Photo Filter Free - Studio Edition (v6.5)
 
-![Photo Filter Studio Banner](https://via.placeholder.com/1000x400.png?text=Photo+Filter+Studio+-+High+Speed+Culling)
+![Photo Filter Studio Banner](https://raw.githubusercontent.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/refs/heads/main/1.png)
 
 ## 📖 Giới Thiệu Phần Mềm (Introduction)
 
