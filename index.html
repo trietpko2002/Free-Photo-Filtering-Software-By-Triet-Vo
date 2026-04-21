@@ -3,56 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Filter Studio - Advanced Culling & Tethering Software</title>
+    <title>Photo Filter Studio - Culling & Tethering Software</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --bg-dark: #0a0c10;
-            --accent-blue: #00aaff;
-            --accent-purple: #8e44ad;
-        }
-        body { 
-            background-color: var(--bg-dark); 
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(0, 170, 255, 0.05), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(142, 68, 173, 0.05), transparent 25%);
-        }
-        
-        .gradient-text { 
-            background: linear-gradient(135deg, #00aaff, #00ffcc); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        .gradient-text-purple { 
-            background: linear-gradient(135deg, #8e44ad, #ff00cc); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        
-        .btn-primary { 
-            background: linear-gradient(135deg, #007acc, #005a9e); 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
-        .btn-primary:hover { 
-            box-shadow: 0 10px 25px rgba(0, 170, 255, 0.4); 
-            transform: translateY(-2px); 
-            filter: brightness(1.15); 
-        }
-        
-        .card-blur { 
-            background: rgba(20, 25, 35, 0.6); 
-            backdrop-filter: blur(16px); 
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.05); 
-            transition: all 0.4s ease; 
-        }
-        .card-blur:hover { 
-            transform: translateY(-5px); 
-            border-color: rgba(0, 170, 255, 0.3); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(0, 170, 255, 0.05); 
-        }
-        
+        .bg-dark-pro { background-color: #0f111a; }
+        .gradient-text { background: linear-gradient(90deg, #00aaff, #00ffcc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { background: linear-gradient(90deg, #007acc, #005a9e); transition: 0.3s; }
+        .btn-primary:hover { box-shadow: 0 10px 20px rgba(0, 170, 255, 0.3); transform: translateY(-2px); filter: brightness(1.1); }
+        .card-blur { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+        .card-blur:hover { transform: translateY(-5px); border-color: rgba(0, 170, 255, 0.3); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
         .slider-img { transition: opacity 0.5s ease-in-out; }
 
         /* Logic Ẩn/Hiện Ngôn Ngữ */
@@ -62,207 +22,251 @@
         html.lang-en div.en, html.lang-en p.en, html.lang-en h1.en, html.lang-en h2.en, html.lang-en h3.en, html.lang-en li.en { display: block; }
     </style>
 </head>
-<body class="text-slate-200 font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
+<body class="bg-dark-pro text-white font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-    <nav class="fixed w-full top-0 z-50 bg-[#0a0c10]/80 backdrop-blur-md border-b border-white/5">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-black text-xl tracking-wider flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <i class="fas fa-camera text-white text-sm"></i>
-                </div>
-                <span>PHOTO FILTER <span class="text-blue-400">STUDIO</span></span>
-            </div>
-            <div class="flex gap-4 items-center">
-                <button onclick="toggleLang()" class="text-sm font-bold text-blue-400 hover:text-white hover:bg-blue-500/20 px-4 py-2 transition border border-blue-500/30 rounded-full flex items-center gap-2">
-                    <i class="fas fa-globe"></i>
-                    <span class="vi">EN</span>
-                    <span class="en">VI</span>
-                </button>
-            </div>
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="font-bold text-xl tracking-wider flex items-center gap-2">
+            <i class="fas fa-camera text-blue-400"></i>
+            <span>PHOTO FILTER <span class="text-blue-400">STUDIO</span></span>
+        </div>
+        <div class="flex gap-4 items-center">
+            <button onclick="toggleLang()" class="text-sm font-bold text-blue-400 hover:text-white hover:bg-blue-500/20 px-4 py-2 transition border border-blue-500/30 rounded-full">
+                <span class="vi">🌐 English</span>
+                <span class="en">🌐 Tiếng Việt</span>
+            </button>
+            <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/issues" class="text-sm font-bold text-red-400 hover:text-red-300 px-4 py-2 transition hidden md:block"><i class="fas fa-bug mr-1"></i> <span class="vi">Báo Lỗi</span><span class="en">Issues</span></a>
         </div>
     </nav>
 
-    <header class="container mx-auto px-6 pt-36 pb-20 text-center relative">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-blue-600/20 blur-[150px] -z-10 rounded-full pointer-events-none"></div>
-        
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-purple-500/30 bg-purple-500/10 rounded-full text-purple-400 text-sm font-bold mb-8 tracking-wide shadow-[0_0_15px_rgba(142,68,173,0.2)] hover:bg-purple-500/20 transition cursor-default">
-            <i class="fas fa-rocket"></i> MỚI: VERSION 6.5 STUDIO (OTA UPDATE)
+    <header class="container mx-auto px-6 pt-12 pb-16 text-center">
+        <div class="inline-block px-4 py-1 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-400 text-sm font-bold mb-8 tracking-wide">
+            🚀 VERSION 6.5 STUDIO (LIVE-SHOOT & AUTO-RENAME)
         </div>
-        
         <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight vi">
-            LỌC ẢNH SIÊU TỐC.<br><span class="gradient-text">LIVE-SHOOT THÔNG MINH.</span>
+            TRẢ ẢNH SIÊU TỐC.<br><span class="gradient-text">LIVE-SHOOT THÔNG MINH.</span>
         </h1>
         <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight en">
             LIGHTNING CULLING.<br><span class="gradient-text">SMART LIVE-SHOOT.</span>
         </h1>
         
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 vi">
-            Phần mềm mã nguồn mở tối ưu Workflow cho Nhiếp ảnh gia. Tự động nhận ảnh từ máy ảnh, phân loại hàng vạn file RAW không giật lag và tự động đổi tên ảnh thẻ.
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 vi">
+            Phần mềm Portable phân loại hàng vạn ảnh từ máy ảnh vào máy tính cực nhanh. Tích hợp nạp ảnh tự động và đổi tên ảnh thẻ chuẩn Workflow Studio.
         </p>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 en">
-            Open-source Workflow optimizer for Photographers. Auto-load tethered shots, cull thousands of RAW files without freezing, and auto-rename ID photos.
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 en">
+            A portable tool to cull and sort thousands of photos instantly. Integrated with tethering auto-load and smart ID renaming for Studio Workflow.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="#download" class="btn-primary px-8 py-4 rounded-full font-bold text-lg flex items-center w-full sm:w-auto justify-center">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#download" class="btn-primary px-8 py-4 rounded-full font-bold text-lg flex items-center">
                 <i class="fas fa-download mr-3"></i> 
                 <span class="vi">Tải Bản Windows (.EXE)</span>
                 <span class="en">Download for Windows</span>
             </a>
-            <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo" target="_blank" class="card-blur px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-800 transition flex items-center border border-slate-600 w-full sm:w-auto justify-center group">
-                <i class="fab fa-github mr-3 text-slate-300 group-hover:text-white transition"></i>
-                <span class="vi text-slate-300 group-hover:text-white transition">Xem GitHub Repository</span>
-                <span class="en text-slate-300 group-hover:text-white transition">View GitHub Repository</span>
-            </a>
+          <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo" target="_blank" class="bg-slate-800/80 px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-700 transition flex items-center border border-slate-600">
+            <span class="vi"><i class="fab fa-github mr-3"></i> Về dự án phần mềm</span>
+            <span class="en"><i class="fab fa-github mr-3"></i> About this project</span>
+          </a>
         </div>
     </header>
 
     <section class="container mx-auto px-6 mb-24 relative z-10 max-w-6xl">
-        <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-[#0f0f13] group">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/10 blur-[120px] -z-10 rounded-full"></div>
+        <div class="relative rounded-xl overflow-hidden border border-slate-700/50 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-[#0f0f13] group">
             
-            <div class="bg-slate-900 border-b border-slate-800 px-4 py-3 flex gap-2 items-center">
-                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                <div class="mx-auto text-xs text-slate-500 font-mono">Photo Filter Studio v6.5</div>
-            </div>
-
-            <img id="mainSlider" src="1.png" alt="App Screenshot" class="w-full h-auto slider-img opacity-100 object-contain max-h-[70vh]">
+            <img id="mainSlider" src="1.png" alt="App Screenshot" class="w-full h-auto slider-img opacity-100 object-contain">
             
-            <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-blue-600 text-white w-12 h-12 rounded-full backdrop-blur transition opacity-0 group-hover:opacity-100 flex items-center justify-center border border-white/10 hover:border-transparent">
-                <i class="fas fa-chevron-left text-lg"></i>
+            <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-blue-600 text-white w-12 h-12 rounded-full backdrop-blur transition opacity-0 group-hover:opacity-100">
+                <i class="fas fa-chevron-left text-xl"></i>
             </button>
-            <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-blue-600 text-white w-12 h-12 rounded-full backdrop-blur transition opacity-0 group-hover:opacity-100 flex items-center justify-center border border-white/10 hover:border-transparent">
-                <i class="fas fa-chevron-right text-lg"></i>
+            <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-blue-600 text-white w-12 h-12 rounded-full backdrop-blur transition opacity-0 group-hover:opacity-100">
+                <i class="fas fa-chevron-right text-xl"></i>
             </button>
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 bg-black/50 px-4 py-2 rounded-full backdrop-blur" id="sliderDots"></div>
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3" id="sliderDots"></div>
         </div>
     </section>
 
-    <section class="container mx-auto px-6 py-16 border-t border-white/5">
-        <div class="text-center mb-16">
-            <h2 class="text-sm font-bold text-blue-400 tracking-widest uppercase mb-3 vi">Tính năng nổi bật</h2>
-            <h2 class="text-sm font-bold text-blue-400 tracking-widest uppercase mb-3 en">Key Features</h2>
-            <h3 class="text-3xl md:text-5xl font-black vi">Được Thiết Kế Cho <span class="gradient-text-purple">Workflow Studio</span></h3>
-            <h3 class="text-3xl md:text-5xl font-black en">Designed for <span class="gradient-text-purple">Studio Workflow</span></h3>
-        </div>
+    <section class="container mx-auto px-6 py-16 border-t border-slate-800/50">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 vi">Vũ Khí Tối Thượng Của Studio</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 en">Ultimate Arsenal for Studios</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="card-blur p-8 rounded-3xl group">
-                <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 transition">
-                    <i class="fas fa-bolt text-2xl"></i>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-blur p-8 rounded-3xl">
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
+                    <i class="fas fa-camera-retro text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3 vi">Anti-Freeze Hàng Loạt</h3>
-                <h3 class="text-xl font-bold mb-3 en">Anti-Freeze Batch</h3>
-                <p class="text-slate-400 text-sm leading-relaxed vi">Phân loại, Copy/Cut hàng ngàn file RAW cùng lúc bằng phím Enter. Giao diện không bao giờ bị đơ (Not Responding).</p>
-                <p class="text-slate-400 text-sm leading-relaxed en">Sort, Copy/Cut thousands of RAW files instantly via Enter key. UI remains perfectly responsive without freezing.</p>
+                <h3 class="text-xl font-bold mb-3 vi">Live-Shoot (Tethering)</h3>
+                <h3 class="text-xl font-bold mb-3 en">Live-Shoot (Tethering)</h3>
+                <p class="text-slate-400 vi">Tự động giám sát thư mục. Máy ảnh chụp xong, file lập tức nạp lên phần mềm để kiểm tra ngay.</p>
+                <p class="text-slate-400 en">Auto folder monitoring. Photos are instantly loaded to the software right after you click the shutter.</p>
             </div>
-
-            <div class="card-blur p-8 rounded-3xl group relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-gradient-to-bl from-purple-500 to-transparent w-24 h-24 opacity-20 rounded-bl-full"></div>
-                <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/30 group-hover:scale-110 transition relative z-10">
-                    <i class="fas fa-camera-retro text-2xl"></i>
+            
+            <div class="card-blur p-8 rounded-3xl">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                    <i class="fas fa-tags text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3 relative z-10 vi">Chụp Tethering (Live-Shoot)</h3>
-                <h3 class="text-xl font-bold mb-3 relative z-10 en">Tethering (Live-Shoot)</h3>
-                <p class="text-slate-400 text-sm leading-relaxed relative z-10 vi">Theo dõi thư mục máy ảnh thời gian thực. Ảnh vừa chụp lập tức nạp lên phần mềm để kiểm tra và xử lý ngay.</p>
-                <p class="text-slate-400 text-sm leading-relaxed relative z-10 en">Real-time camera folder monitoring. Newly captured photos are auto-loaded for instant review and processing.</p>
-            </div>
-
-            <div class="card-blur p-8 rounded-3xl group">
-                <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/30 group-hover:scale-110 transition">
-                    <i class="fas fa-tags text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3 vi">Đổi Tên Auto (Ảnh Thẻ)</h3>
+                <h3 class="text-xl font-bold mb-3 vi">Đổi Tên Ảnh Thẻ Auto</h3>
                 <h3 class="text-xl font-bold mb-3 en">Smart Rename (ID Photo)</h3>
-                <p class="text-slate-400 text-sm leading-relaxed vi">Nhập tên khách hàng (VD: NguyenVanA), xuất ảnh phần mềm tự động đổi tên và đánh số thứ tự thông minh.</p>
-                <p class="text-slate-400 text-sm leading-relaxed en">Enter client name (e.g., JohnDoe), the software auto-renames and numbers exported files intelligently.</p>
+                <p class="text-slate-400 vi">Nhập tên khách hàng, khi nhấn Enter xuất file sẽ tự động đổi tên và đánh số thứ tự thông minh.</p>
+                <p class="text-slate-400 en">Enter client name, hit Enter to export, and files are automatically renamed and numbered.</p>
             </div>
-
-            <div class="card-blur p-8 rounded-3xl group">
-                <div class="w-14 h-14 bg-rose-500/20 text-rose-400 rounded-2xl flex items-center justify-center mb-6 border border-rose-500/30 group-hover:scale-110 transition">
-                    <i class="fas fa-shield-virus text-2xl"></i>
+            
+            <div class="card-blur p-8 rounded-3xl">
+                <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-rose-500/20">
+                    <i class="fas fa-shield-virus text-2xl text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3 vi">Cảnh Báo Trùng Lặp</h3>
-                <h3 class="text-xl font-bold mb-3 en">Duplicate Warning</h3>
-                <p class="text-slate-400 text-sm leading-relaxed vi">Ngăn chặn việc xuất nhầm 1 file 2 lần vào cùng thư mục. Cho phép tùy chọn Bỏ qua hoặc Tạo bản sao.</p>
-                <p class="text-slate-400 text-sm leading-relaxed en">Prevents accidentally exporting the same file twice to a folder. Options to Skip or Create a duplicate.</p>
-            </div>
-
-            <div class="card-blur p-8 rounded-3xl group relative overflow-hidden">
-                <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center mb-6 border border-amber-500/30 group-hover:scale-110 transition">
-                    <i class="fas fa-cloud-download-alt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3 vi">Cập Nhật OTA (Auto-Update)</h3>
-                <h3 class="text-xl font-bold mb-3 en">OTA Auto-Update</h3>
-                <p class="text-slate-400 text-sm leading-relaxed vi">Phần mềm tự động kiểm tra phiên bản trên GitHub, tải về và ghi đè âm thầm. Luôn có bản mới nhất chỉ với 1-click.</p>
-                <p class="text-slate-400 text-sm leading-relaxed en">Automatically checks GitHub for updates, downloads, and replaces the exe silently. Always stay up-to-date.</p>
-            </div>
-
-            <div class="card-blur p-8 rounded-3xl group">
-                <div class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/30 group-hover:scale-110 transition">
-                    <i class="fas fa-lock text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3 vi">App Lock & Safe Eject</h3>
-                <h3 class="text-xl font-bold mb-3 en">App Lock & Safe Eject</h3>
-                <p class="text-slate-400 text-sm leading-relaxed vi">Khóa bảo vệ dự án hình ảnh nhạy cảm bằng Mật khẩu. Hỗ trợ ngắt kết nối thẻ SD an toàn trực tiếp trên giao diện.</p>
-                <p class="text-slate-400 text-sm leading-relaxed en">Password-protect sensitive projects. Support safe removal of SD cards directly from the software UI.</p>
+                <h3 class="text-xl font-bold mb-3 en">Duplicate Warnings</h3>
+                <p class="text-slate-400 vi">Ngăn chặn triệt để việc xuất nhầm file 2 lần vào cùng thư mục. Tùy chọn tạo bản sao hoặc bỏ qua.</p>
+                <p class="text-slate-400 en">Prevent exporting the same file twice to a folder. Choose to skip or create a duplicate copy.</p>
             </div>
         </div>
     </section>
 
-    <section class="container mx-auto px-6 py-12">
-        <div class="bg-[#050505] rounded-2xl border border-slate-800 font-mono text-sm shadow-2xl max-w-4xl mx-auto overflow-hidden">
-            <div class="bg-[#111318] border-b border-slate-800 px-4 py-3 flex gap-2 items-center">
-                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                <div class="ml-4 text-slate-500 text-xs">C:\Studio\Terminal.exe</div>
+    <section class="container mx-auto px-6 py-20">
+        <div class="bg-[#131620] rounded-[2.5rem] p-10 md:p-16 border border-slate-700/50 flex flex-col md:flex-row items-center gap-12 shadow-2xl shadow-black/50">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 vi">Xử Lý Hàng Loạt & Lọc Sâu</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 en">Batch Process & Deep Filters</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <div class="bg-blue-500/20 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-bolt text-blue-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-200">Anti-Freeze Core</h4>
+                            <p class="text-slate-400 mt-1 vi">Khóa UI thông minh khi copy. Di chuyển 1000 ảnh cùng lúc mà không bị văng app.</p>
+                            <p class="text-slate-400 mt-1 en">Smart UI blocking during heavy transfers. Move 1000 photos with zero crashes.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-500/20 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-filter text-blue-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-200 vi">Bộ Lọc Video & RAW</h4>
+                            <h4 class="font-bold text-lg text-slate-200 en">Video & RAW Filters</h4>
+                            <p class="text-slate-400 mt-1 vi">Tự động từ chối load file Video để chống lag. Hỗ trợ mượt mà các file .cr2, .nef, .arw.</p>
+                            <p class="text-slate-400 mt-1 en">Automatically skip videos to prevent lag. Smoothly supports .cr2, .nef, .arw formats.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-500/20 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-cloud-download-alt text-blue-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-200 vi">Auto-Update OTA</h4>
+                            <h4 class="font-bold text-lg text-slate-200 en">Auto-Update OTA</h4>
+                            <p class="text-slate-400 mt-1 vi">Phần mềm tự động kiểm tra, tải về và ghi đè file cập nhật từ GitHub mà không cần cài lại.</p>
+                            <p class="text-slate-400 mt-1 en">Automatically checks, downloads, and overwrites updates from GitHub without reinstalling.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="p-6 text-green-400 leading-relaxed">
-                <p class="text-blue-400 font-bold mb-2">TrietVo@Studio ~ % start PhotoFilter.exe</p>
-                <p>> Khởi chạy môi trường / Booting Core (v6.5 STUDIO)... [OK]</p>
-                <p>> Kết nối API GitHub / Checking Updates... [LATEST]</p>
-                <p>> Giám sát Tethering (Live-Shoot)... <span class="text-yellow-400">[ON]</span></p>
-                <p>> Chống ghi đè & Đổi tên tự động... <span class="text-yellow-400">[ON]</span></p>
-                <p class="mt-4">> Đang chờ tín hiệu từ máy ảnh / Waiting for camera trigger...</p>
-                <p class="text-slate-500 animate-pulse">_</p>
+            <div class="md:w-1/2 w-full bg-[#0a0c10] p-6 rounded-2xl border border-slate-700 font-mono text-sm text-green-400 shadow-inner">
+                <div class="flex gap-2 mb-4 border-b border-slate-800 pb-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                > Khởi chạy môi trường (v6.5 STUDIO)...<br>
+                > Tải ngôn ngữ / Loading lang... [OK]<br>
+                > Giám sát Tethering (Live-Shoot)... <span class="text-yellow-400">[ON]</span><br>
+                > Chống ghi đè & Đổi tên tự động... <span class="text-yellow-400">[ON]</span><br>
+                > Đang chờ tín hiệu từ máy ảnh...<br>
+                <span class="text-blue-400">> Hoàn tất / Ready!</span>
             </div>
         </div>
     </section>
 
-    <section id="download" class="container mx-auto px-6 py-24 text-center border-t border-white/5 relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 blur-[100px] -z-10 rounded-full"></div>
+    <section id="download" class="container mx-auto px-6 py-24 text-center">
+        <h2 class="text-4xl md:text-5xl font-black mb-6 vi">Sẵn sàng tối ưu Workflow?</h2>
+        <h2 class="text-4xl md:text-5xl font-black mb-6 en">Ready to optimize your Workflow?</h2>
         
-        <h2 class="text-4xl md:text-6xl font-black mb-6 vi">Sẵn sàng tối ưu <br> <span class="gradient-text">Quy trình làm việc?</span></h2>
-        <h2 class="text-4xl md:text-6xl font-black mb-6 en">Ready to optimize <br> <span class="gradient-text">Your Workflow?</span></h2>
+        <p class="text-slate-400 mb-10 max-w-lg mx-auto text-lg vi">Phần mềm Portable độc lập. Tải về ném thẳng vào thẻ nhớ hoặc màn hình Desktop là dùng luôn!</p>
+        <p class="text-slate-400 mb-10 max-w-lg mx-auto text-lg en">100% Portable software. Download and run it directly from your Desktop or SD card!</p>
         
-        <p class="text-slate-400 mb-12 max-w-xl mx-auto text-lg vi">Phần mềm Portable mở mã nguồn độc lập. Không cần cài đặt, tải về để vào màn hình Desktop hoặc thẻ nhớ là dùng luôn!</p>
-        <p class="text-slate-400 mb-12 max-w-xl mx-auto text-lg en">Open-source portable software. No installation needed, download to Desktop or USB and run instantly!</p>
-        
-        <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/releases/download/stable/PhotoFilterFree.exe" class="btn-primary px-12 py-5 rounded-full font-bold text-xl inline-flex items-center shadow-[0_10px_40px_rgba(0,170,255,0.4)] ring-4 ring-blue-500/20 hover:ring-blue-500/40">
-            <i class="fab fa-windows mr-3 text-2xl"></i> Tải PhotoFilterFree.exe
+        <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/releases/download/stable/PhotoFilterFree.exe" class="btn-primary px-12 py-5 rounded-full font-bold text-xl inline-flex items-center shadow-[0_10px_30px_rgba(0,170,255,0.3)]">
+            <i class="fab fa-windows mr-3 text-2xl"></i> PhotoFilterFree.exe
         </a>
 
-        <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-6">
-            <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/releases" target="_blank" class="text-slate-400 hover:text-white transition flex items-center gap-2 font-medium">
-                <i class="fas fa-history text-blue-400"></i>
-                <span class="vi">Các phiên bản trước (Releases)</span>
-                <span class="en">Previous Releases</span>
-            </a>
-            <span class="hidden md:block text-slate-700">•</span>
-            <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo" target="_blank" class="text-slate-400 hover:text-white transition flex items-center gap-2 font-medium">
-                <i class="fas fa-code text-purple-400"></i>
-                <span class="vi">Xem Mã nguồn (Source Code)</span>
-                <span class="en">View Source Code</span>
+        <div class="mt-5">
+            <a href="https://github.com/trietpko2002/Free-Photo-Filtering-Software-By-Triet-Vo/releases/tag/stable" class="text-sm font-medium text-slate-400 hover:text-blue-400 transition underline underline-offset-4">
+                <span class="vi">Xem các phiên bản trước</span>
+                <span class="en">View previous versions</span>
             </a>
         </div>
-
-        <div class="mt-12 flex flex-col items-center">
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm text-slate-400 bg-slate-900/50 px-8 py-4 rounded-2xl border border-slate-800">
+        
+        <div class="mt-8 flex flex-col items-center">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm text-slate-400 bg-slate-800/30 px-8 py-3 rounded-full border border-slate-700/50">
                 <a href="https://www.virustotal.com/gui/file/d2e75dfcfb6d005c24c51611617eff742d701abe331917231ac706c0c058bbcc?nocache=1" target="_blank" class="hover:text-green-400 transition flex items-center gap-2 font-medium">
-                    <i class="fas fa-shield-check text-green-500 text-lg"></i> VirusTotal: 2/70 Safe
+                    <i class="fas fa-shield-alt text-green-500"></i> VirusTotal: 2/70 Safe
                 </a>
-                <span class="hidden md:inline text-slate-700">|</span>
+                <span class="hidden md:inline text-slate-600">|</span>
                 <span class="flex items-center gap-2 font-medium">
-                    <i class="fas fa-file-signature text-blue-500 text-lg"></i> MD5: <span class="font-mono text-
+                    <i class="fas fa-file-archive text-blue-500"></i> MD5: <span class="font-mono text-slate-300">05a45b1fdb0a252bfb25f87c89b641dc</span>
+                </span>
+            </div>
+
+            <div class="mt-4 max-w-xl text-center text-xs text-slate-500">
+                <p class="vi"><i class="fas fa-exclamation-triangle text-yellow-600/80 mr-1"></i> <b>Lưu ý:</b> Hãy đối chiếu kỹ mã MD5 để tránh tải nhầm bản bị gắn mã độc. Tác giả không chịu trách nhiệm cho các tệp tin bị bên thứ 3 chỉnh sửa!</p>
+                <p class="en"><i class="fas fa-exclamation-triangle text-yellow-600/80 mr-1"></i> <b>Note:</b> Please double-check the MD5 hash to avoid malware infections. The author is not responsible for any modifications made by third parties!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800 bg-[#0a0c10] pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-slate-500 text-sm">
+                <p>Designed & Coded by <i class="fas fa-heart text-red-500 mx-1"></i> by <strong class="text-slate-300">Triet Vo</strong> &copy; 2026</p>
+                <p class="mt-1 vi">Liên hệ qua email: phanranggaming@gmail.com</p>
+                <p class="mt-1 en">Email: phanranggaming@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chuyển Ngôn ngữ
+        function toggleLang() {
+            const htmlTag = document.documentElement;
+            htmlTag.classList.toggle('lang-en');
+        }
+
+        // Logic Slider Ảnh (GIỮ NGUYÊN)
+        const images = ["1.png", "2.png", "3.png"];
+        let currentIndex = 0;
+        const imgElement = document.getElementById("mainSlider");
+        const dotsContainer = document.getElementById("sliderDots");
+
+        images.forEach((_, index) => {
+            const dot = document.createElement("div");
+            dot.className = `w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ${index === 0 ? 'bg-blue-400 w-8' : 'bg-slate-600 hover:bg-slate-400'}`;
+            dot.onclick = () => goToSlide(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateDots() {
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.className = index === currentIndex 
+                    ? 'w-8 h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)]' 
+                    : 'w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 bg-slate-600 hover:bg-slate-400';
+            });
+        }
+
+        function changeSlide() {
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                imgElement.src = images[currentIndex];
+                imgElement.style.opacity = 1;
+                updateDots();
+            }, 300);
+        }
+
+        function nextSlide() { currentIndex = (currentIndex + 1) % images.length; changeSlide(); }
+        function prevSlide() { currentIndex = (currentIndex - 1 + images.length) % images.length; changeSlide(); }
+        function goToSlide(index) { currentIndex = index; changeSlide(); }
+        
+        // Tự động chuyển ảnh mỗi 4 giây
+        setInterval(nextSlide, 4000);
+    </script>
+</body>
+</html>
