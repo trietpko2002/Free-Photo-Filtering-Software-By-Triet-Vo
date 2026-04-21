@@ -1,84 +1,55 @@
-# 📸 Photo Filter Free (Photography Edition)
+# 📸 Photo Filter Free - Studio Edition (v6.5)
 
-![Platform](https://img.shields.io/badge/Platform-Windows-blue.svg)
-![Version](https://img.shields.io/badge/Version-6.0_STABLE-green.svg)
-![Optimization](https://img.shields.io/badge/Anti--Freeze-Enabled-ff69b4.svg)
-![License](https://img.shields.io/badge/License-Freeware-yellow.svg)
-
-**Photo Filter Free** là giải pháp phần mềm Windows dạng Portable (Chạy ngay không cần cài đặt) được thiết kế đặc biệt dành cho **Nhiếp ảnh gia và Editor**. Giúp bạn phân loại, chọn lọc và backup hàng vạn tấm ảnh RAW/JPEG từ thẻ nhớ vào máy tính với tốc độ cực hạn mà không bao giờ bị treo máy.
-
-![Màn hình Welcome](screenshot_welcome.png)
+**Photo Filter Free** là giải pháp phần mềm mã nguồn mở (100% Miễn phí) được thiết kế đặc biệt dành cho các Nhiếp ảnh gia, Thợ chụp sự kiện và Studio chụp ảnh thẻ. Phần mềm giúp tối ưu hóa quy trình lọc ảnh (culling), phân loại và trả ảnh với tốc độ siêu tốc mà không gây giật lag (Anti-Freeze).
 
 ---
 
-## 🛡️ Xác thực & Bảo mật (Security Check)
-Để đảm bảo an toàn tuyệt đối, vui lòng kiểm tra mã MD5 của tệp `.exe` bạn tải về để khớp với mã gốc từ tác giả.
-* **Tệp tin:** `PhotoFilterFree.exe`
-* **MD5 Checksum:** `05a45b1fdb0a252bfb25f87c89b641dc`
-* **Quét VirusTotal (2/70):** [Click để xem kết quả quét file sạch 100%](https://www.virustotal.com/gui/file/d2e75dfcfb6d005c24c51611617eff742d701abe331917231ac706c0c058bbcc?nocache=1)
+## 🔥 Tính năng Mới Nổi bật (Cập nhật v6.5 STUDIO)
+
+* **📸 Chế độ Chụp Liên Kết (Live-Shoot / Tethering):** Phần mềm tự động giám sát thư mục máy ảnh. Ngay khi bạn bấm máy, ảnh sẽ tự động được tải lên phần mềm và hiển thị ngay lập tức mà không cần F5.
+* **🏷️ Đổi Tên Thông Minh (Smart Rename):** Dành riêng cho Studio chụp ảnh thẻ. Nhập tên khách hàng (VD: `NguyenVanA`), khi xuất ảnh phần mềm sẽ tự động đổi tên file. Nếu bôi đen nhiều ảnh, hệ thống tự động đánh số thứ tự (`NguyenVanA_1`, `NguyenVanA_2`).
+* **🛡️ Cảnh Báo Trùng Lặp (Duplicate Warning):** Ngăn chặn việc xuất nhầm 1 file 2 lần vào cùng một thư mục, giúp tiết kiệm dung lượng ổ cứng và tránh rác dữ liệu.
+* **🔄 Chuyển Đổi Workflow Nhanh:** 1-Click để chuyển đổi giữa 2 chế độ làm việc: **Lọc Ảnh Chung** (Sự kiện/Phóng sự) và **Chụp Ảnh Thẻ** (Tối ưu cho việc đổi tên và dời file tức thì).
 
 ---
 
-## 🇻🇳 TIẾNG VIỆT
+## ✨ Tính năng Cốt lõi
 
-### ✨ Tính năng Đột phá
-* **Đa ngôn ngữ (I18N):** Chuyển đổi mượt mà giữa Tiếng Việt và Tiếng Anh chỉ với 1 click.
-* **Hỗ trợ định dạng RAW:** Tùy chọn đọc và di chuyển siêu tốc các đuôi nặng đô (`.cr2`, `.nef`, `.arw`, `.dng`).
-* **Thuật toán Anti-Freeze:** Khóa UI khi chuyển hàng ngàn ảnh. Cam kết không bao giờ bị "Not Responding".
-* **Bộ lọc Nhiếp ảnh (Deep Filters):** Tự động bỏ qua Video để chống lag, loại bỏ các file rác/thumbnail dựa trên dung lượng (KB).
-* **Bảo mật App Lock:** Đặt mật khẩu khóa thư viện ảnh private của khách hàng. 
-* **Đọc EXIF & Safe Eject:** Hiển thị thông số máy ảnh và cho phép rút thẻ SD an toàn trực tiếp từ phần mềm.
-
-![Không gian làm việc](screenshot_workspace.png)
-
-### 📥 Cài đặt & Sử dụng (Portable)
-1. Tải xuống tệp `PhotoFilterFree.exe` mới nhất tại mục **[Releases](LINK_RELEASES_CUA_BAN)**.
-2. Click đúp vào tệp `.exe` và bắt đầu lọc ảnh (Phần mềm tự động lưu cấu hình của bạn).
-
-### 🔑 Quên mật khẩu? (Khôi phục khẩn cấp)
-Nếu bạn bật tính năng Khóa ứng dụng và lỡ quên mật khẩu:
-* Tại màn hình Khóa, bấm vào dòng **"Quên mật khẩu?"**.
-* Nhập Mã khôi phục (Master Key) là: **`khoiphucmatkhaulocanh`**
-* Phần mềm sẽ cho phép bạn đặt lại mật khẩu mới ngay lập tức.
-
-### ⌨️ Cẩm nang Phím tắt
-* `Ctrl + C` / `Ctrl + X`: Chuyển đổi chế độ **COPY** (Backup thẻ) và **CUT** (Dọn sạch thẻ).
-* `1 - 5`: Nhấn để chọn nhanh 5 thư mục đích đã cài đặt.
-* `Enter`: Thực thi chuyển ảnh an toàn. Tự động nhảy file tiếp theo.
-* `Space`: Phát/Tạm dừng khi xem Video.
+* **🚀 Phân loại Siêu tốc:** Gán sẵn 5 thư mục đích (Tương ứng phím `1` đến `5`). Nhấn `Enter` để lập tức dời/copy ảnh.
+* **🎛️ Hai Chế độ Xử lý (COPY & CUT):** * `COPY (Ctrl+C)`: Trả ảnh cho khách nhưng vẫn giữ lại bản gốc an toàn trên thẻ nhớ.
+    * `CUT (Ctrl+X)`: Dọn dẹp thẻ nhớ ngay trong lúc phân loại.
+* **🎥 Hỗ trợ Đa Định dạng:** Đọc mượt mà các định dạng `JPG`, `PNG`, ảnh `RAW` (CR2, NEF, ARW, DNG) và phát trực tiếp Video (`MP4`, `MOV`).
+* **💽 Giám sát Thẻ nhớ An toàn:** Hiển thị dung lượng thẻ nhớ theo thời gian thực và có nút **Eject (Rút thẻ an toàn)** ngay trên giao diện để tránh hỏng dữ liệu.
+* **🔒 Bảo mật App Lock:** Đặt mật khẩu khóa phần mềm để bảo vệ các thư mục dự án nhạy cảm/riêng tư khỏi người lạ.
 
 ---
 
-## 🇺🇸 ENGLISH
+## ⌨️ Cẩm nang Phím tắt (Shortcuts)
 
-### ✨ Key Features
-* **Multilingual:** Seamlessly switch between English and Vietnamese.
-* **RAW Format Support:** Read and process heavy formats like `.cr2`, `.nef`, `.arw`, `.dng` instantly.
-* **Anti-Freeze Batch Processing:** UI-blocking architecture ensures zero app crashes when moving thousands of photos.
-* **Deep Filters:** Automatically skip videos to prevent lag and ignore small junk/thumbnail files.
-* **App Lock:** Password-protect the application to secure private client photos.
-* **EXIF & Safe Eject:** View Camera data and safely disconnect SD Cards directly from the app.
-
-### 📥 How to Use (Portable Version)
-1. Download the latest `PhotoFilterFree.exe` file from **[Releases](LINK_RELEASES_CUA_BAN)**.
-2. Double-click the `.exe` and start sorting!
-
-### 🔑 Forgot Password? (Emergency Recovery)
-If you enable App Lock and forget your password:
-* On the Lock Screen, click **"Forgot password?"**.
-* Enter the Master Key: **`khoiphucmatkhaulocanh`**
-* You will be prompted to reset your password immediately.
-
-### ⌨️ Hotkeys Guide
-* `Ctrl + C` / `Ctrl + X`: Toggle **COPY** (Backup) and **CUT** (Clear card) modes.
-* `1 - 5`: Quick-select target folders.
-* `Enter`: Execute the file transfer. Auto-focuses next file.
-* `Space`: Play/Pause Video preview.
+| Phím tắt | Chức năng |
+| :--- | :--- |
+| `Ctrl + C` | Chuyển sang chế độ **COPY** (Sao chép) |
+| `Ctrl + X` | Chuyển sang chế độ **CUT** (Di chuyển) |
+| `1, 2, 3, 4, 5` | Chọn nhanh thư mục đích tương ứng (F1 -> F5) |
+| `Enter` | Xuất/Dời ảnh vào thư mục đã chọn |
+| `Mũi tên ⬆ / ⬇` | Lướt xem ảnh trên danh sách |
+| `Space (Dấu cách)` | Phát / Tạm dừng Video |
+| `Ctrl + Click` | Bôi đen, chọn nhiều file cùng lúc |
 
 ---
 
-## ☕ ỦNG HỘ TÁC GIẢ & GÓP Ý
-Phần mềm này hoàn toàn miễn phí. Nếu nó giúp bạn tiết kiệm thời gian, hãy ủng hộ tác giả qua mã **VietQR (BIDV)** được tích hợp ngay trong phần mềm.
-* **Báo lỗi:** [Issues Tab](LINK_ISSUES_CUA_BAN)
+## 🛠️ Công nghệ sử dụng (Tech Stack)
+* **Ngôn ngữ:** Python 3.x
+* **Giao diện (GUI):** PyQt6
+* **Xử lý Media:** PyQt6.QtMultimedia, Pillow (đọc Exif)
+* **Hệ thống file:** `QFileSystemWatcher` (Giám sát thời gian thực), thư viện `shutil`, `os`.
 
-**Author:** Triet Vo | Phan Rang, Khanh Hoa Province
+---
+
+## ☕ Ủng hộ Tác giả (Donate)
+
+Phần mềm được phát triển hoàn toàn miễn phí vì cộng đồng Nhiếp ảnh. Nếu công cụ này giúp ích cho luồng công việc của bạn, hãy ủng hộ tác giả một ly cà phê nhé! ❤️
+Mã QR Donate (VietQR) được tích hợp trực tiếp ngay tại trang chủ của phần mềm.
+
+**Tác giả:** Triet Vo  
+**Phiên bản:** v6.5 STABLE STUDIO
